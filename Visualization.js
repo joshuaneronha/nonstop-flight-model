@@ -162,7 +162,7 @@ d3.csv("./resources/model_output_35k.csv", function(model) {
     Tooltip
         .html(d.ORIGIN)
         .style("left", (d3.mouse(this)[0]+10) + "px")
-        .style("top", (d3.mouse(this)[1] + 510) + "px")
+        .style("top", (d3.mouse(this)[1] + 100) + "px")
     }
     var mouseleave = function(d) {
     Tooltip.style("opacity", 0)
