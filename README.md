@@ -1,2 +1,2 @@
 # nonstop-flight-model
-    ![My image](joshuaneronha.github.com/nonstop-flight-model/example.png)
+    [My image](https://raw.githubusercontent.com/joshuaneronha/nonstop-flight-model/main/example.png)
