@@ -95,16 +95,41 @@ let total = svg_1.append("text")
 let predicted_label = svg_1.append("text")
     //creating a blank title object -- blank for now because it shows how many countries are displayed!
     .attr("x", 920)
-    .attr("y", 365)
+    .attr("y", 330)
     .style("text-anchor", "center")
     .style("font-size", 15)
     .text("Predicted Nonstop PDEW:")
     .style("opacity",0)
 
-let predicted = svg_1.append("text")
+let regression_label = svg_1.append("text")
     //creating a blank title object -- blank for now because it shows how many countries are displayed!
     .attr("x", 920)
-    .attr("y", 395)
+    .attr("y", 365)
+    .style("text-anchor", "center")
+    .style("font-size", 15)
+    .text("Regression:")
+    .style("opacity",100)
+
+let nn_label = svg_1.append("text")
+    //creating a blank title object -- blank for now because it shows how many countries are displayed!
+    .attr("x", 920)
+    .attr("y", 400)
+    .style("text-anchor", "center")
+    .style("font-size", 15)
+    .text("Neural Network:")
+    .style("opacity",100)
+
+let predicted = svg_1.append("text")
+    //creating a blank title object -- blank for now because it shows how many countries are displayed!
+    .attr("x", 1020)
+    .attr("y", 365)
+    .style("text-anchor", "center")
+    .style("font-size", 25)
+
+let predicted_nn = svg_1.append("text")
+    //creating a blank title object -- blank for now because it shows how many countries are displayed!
+    .attr("x", 1020)
+    .attr("y", 400)
     .style("text-anchor", "center")
     .style("font-size", 25)
 
@@ -119,7 +144,7 @@ let info_box = svg_1.append("rect")
 
 d3.json("./resources/us-states.json", function(data){
 d3.csv("./resources/airports_withloc.csv", function(airports) {
-d3.csv("./resources/model_output_35k.csv", function(model) {
+d3.csv("./resources/model_output_new_35k.csv", function(model) {
 
     // Filter data
     // data.features = data.features.filter( function(d){return d.properties.name=="France"} )
@@ -236,6 +261,7 @@ d3.csv("./resources/model_output_35k.csv", function(model) {
                 nonstop.text(Math.round(model_val[0].nonstop))
                 total.text(Math.round(model_val[0].total))
                 predicted.text(Math.round(model_val[0].pred))
+                predicted_nn.text(Math.round(model_val[0].pred_n))
                 counter += 1            
             }
             else {
