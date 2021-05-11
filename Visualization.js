@@ -261,7 +261,16 @@ d3.csv("./resources/model_output_new_35k.csv", function(model) {
                 nonstop.text(Math.round(model_val[0].nonstop))
                 total.text(Math.round(model_val[0].total))
                 predicted.text(Math.round(model_val[0].pred))
-                predicted_nn.text(Math.round(model_val[0].pred_n))
+
+                if (Math.round(model_val[0].pred_n) > 35) {
+                    predicted_nn.text(Math.round(model_val[0].pred_n))
+                }
+
+                else {
+                    predicted_nn.text("<35")
+                }
+
+                
                 counter += 1            
             }
             else {
