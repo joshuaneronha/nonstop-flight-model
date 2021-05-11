@@ -121,14 +121,14 @@ let nn_label = svg_1.append("text")
 
 let predicted = svg_1.append("text")
     //creating a blank title object -- blank for now because it shows how many countries are displayed!
-    .attr("x", 1020)
+    .attr("x", 1030)
     .attr("y", 365)
     .style("text-anchor", "center")
     .style("font-size", 25)
 
 let predicted_nn = svg_1.append("text")
     //creating a blank title object -- blank for now because it shows how many countries are displayed!
-    .attr("x", 1020)
+    .attr("x", 1030)
     .attr("y", 400)
     .style("text-anchor", "center")
     .style("font-size", 25)
