@@ -95,41 +95,57 @@ let total = svg_1.append("text")
 let predicted_label = svg_1.append("text")
     //creating a blank title object -- blank for now because it shows how many countries are displayed!
     .attr("x", 920)
-    .attr("y", 330)
+    .attr("y", 347.5)
     .style("text-anchor", "center")
     .style("font-size", 15)
     .text("Predicted Nonstop PDEW:")
     .style("opacity",0)
+    
 
 let regression_label = svg_1.append("text")
     //creating a blank title object -- blank for now because it shows how many countries are displayed!
     .attr("x", 920)
-    .attr("y", 365)
+    .attr("y", 410)
     .style("text-anchor", "center")
-    .style("font-size", 15)
-    .text("Regression:")
-    .style("opacity",100)
+    .style("font-size", 13.5)
+    .text("Regression")
+    .style("opacity",0)
+    .attr("font-weight",450)
+    .attr("fill","red")
 
 let nn_label = svg_1.append("text")
     //creating a blank title object -- blank for now because it shows how many countries are displayed!
-    .attr("x", 920)
-    .attr("y", 400)
+    .attr("x", 1030)
+    .attr("y", 402.5)
     .style("text-anchor", "center")
-    .style("font-size", 15)
-    .text("Neural Network:")
-    .style("opacity",100)
+    .style("font-size", 13.5)
+    .text("Neural")
+    .style("opacity",0)
+    .attr("font-weight",450)
+    .attr("fill","blue")
+
+let nn_label_2 = svg_1.append("text")
+    //creating a blank title object -- blank for now because it shows how many countries are displayed!
+    .attr("x", 1025)
+    .attr("y", 417.5)
+    .style("text-anchor", "center")
+    .style("font-size", 13.5)
+    .text("Network")
+    .style("opacity",0)
+    .attr("font-weight",450)
+    .attr("fill","blue")
 
 let predicted = svg_1.append("text")
     //creating a blank title object -- blank for now because it shows how many countries are displayed!
-    .attr("x", 1030)
-    .attr("y", 365)
+    .attr("x", 935)
+    .attr("y", 380)
     .style("text-anchor", "center")
     .style("font-size", 25)
 
 let predicted_nn = svg_1.append("text")
     //creating a blank title object -- blank for now because it shows how many countries are displayed!
-    .attr("x", 1030)
-    .attr("y", 400)
+    .attr("x", 1027.5)
+    .attr("y", 380)
     .style("text-anchor", "center")
     .style("font-size", 25)
 
@@ -240,6 +256,9 @@ d3.csv("./resources/model_output_new_35k.csv", function(model) {
                 total_label.style("opacity",1)
                 nonstop_label.style("opacity",1)
                 predicted_label.style("opacity",1)
+                regression_label.style("opacity",1)
+                nn_label.style("opacity",1)
+                nn_label_2.style("opacity",1)
 
                 airport_two.text(d.ORIGIN)
                 var link = {type: "LineString", coordinates: [[a_one_lo, a_one_la], [d.long, d.lat]]}
